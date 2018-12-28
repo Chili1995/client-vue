@@ -1,6 +1,6 @@
 <template>
     <div>
-      这是首页
+      {{this.$store.state.userInfo.userName}} 登录成功 !
     </div>
 </template>
 <script>
@@ -9,11 +9,12 @@ export default {
   name: 'Main',
   data () {
     return {
-
+      user:'11'
     }
   },
+  created: function () {
+  },
   methods:{
-    
   }
 }
 

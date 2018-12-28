@@ -14,16 +14,22 @@ export default {
   name: 'Login',
   data () {
     return {
-      userName:'',
-      passWord:'',
+      userName: '',
+      passWord: ''
     }
   },
-  methods:{
+  // computed: {
+  //   userInfo() {
+  //     return this.$store.state.userInfo
+  //   }
+  // },
+  methods: {
     login_fn(){
-      if (this.userName == "admin" && this.passWord == 123456) {
-        //提交表单
+      if (this.userName && this.passWord) {
+        this.$store.commit('isLogin',this.userName);
+        //提交表单 怎么调接口
         //跳转页面
-
+        this.$router.go(-1);
       }
     }
   }
@@ -32,6 +38,11 @@ export default {
 </script>
 
 <style scoped>
+  .orders-login{
+    width: 30%;
+    margin:  50px auto;
+    text-align: center;
+  }
   .orders-login input{
     width: 180px;
     height: 30px;
